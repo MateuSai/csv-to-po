@@ -1,7 +1,6 @@
 use std::error::Error;
 use std::fs::File;
-use std::io::{self, LineWriter, Write, BufWriter};
-use std::io::BufReader;
+use std::io::{Write, BufWriter};
 use std::process;
 use clap::Parser;
 
@@ -22,6 +21,7 @@ fn generate_po(csv_path: std::path::PathBuf, otput_dir: std::path::PathBuf) -> R
     };
     
     let mut bw = BufWriter::new(&pot_file);
+    bw.write("msgid \"\"\nmsgstr \"\"\n".as_bytes())?;
     // Build the CSV reader and iterate over each record.
     let rdr = csv::Reader::from_path(csv_path);
     for result in rdr?.records() {
