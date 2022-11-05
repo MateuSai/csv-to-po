@@ -80,6 +80,7 @@ fn generate_po(
                 // Write the translation in each po file
                 let mut i = 0;
                 for tr in record_iter {
+                    let tr = tr.replace("\"", "\\\"");
                     let bw = po_bws.get_mut(i).unwrap();
                     bw.write(format!("msgid \"{}\"\n", id).as_bytes())?;
                     bw.write(format!("msgstr \"{}\"\n\n", tr).as_bytes())?;
