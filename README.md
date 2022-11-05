@@ -8,5 +8,5 @@ The usage is the following:
 cargo run -- path_to_csv path_to_output_directory -p project_id
 ```
 
-- The -p argument is opcional.
+- The -p argument is optional.
 - if no output directory is provided, the current directory will be used
