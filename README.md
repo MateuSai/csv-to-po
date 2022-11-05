@@ -1,7 +1,7 @@
 # csv-to-po
 Convert csv files to po files plus the pot template file
 
-This simple program generates a pot file and the corresponding po files from a a csv file with the translations
+This simple rust program generates a pot file and the corresponding po files from a a csv file with the translations
 
 The usage is the following:
 ```
